@@ -13,7 +13,7 @@ public class AccountService {
 
     public static void saveAccount(Account account){
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        jdbcTemplate.update("INSERT INTO " + ACCOUNT_TABLE + " VALUES(?, ?)", account.getAccountId(),"PWD" /*account.getPassword()*/);
+        jdbcTemplate.update("INSERT INTO " + ACCOUNT_TABLE + " VALUES(?, ?)", account.getAccountId(),account.getPassword());
 
     }
 

@@ -50,7 +50,7 @@ public class GreetingControllerTests {
     @Test
     public void createAccount() throws Exception {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("AccountId", 1);
+        jsonObject.put("accountId", 1);
         this.mockMvc.perform(post("/account").contentType(MediaType.APPLICATION_JSON_UTF8).content(jsonObject.toString()))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -62,7 +62,7 @@ public class GreetingControllerTests {
     @Test
     public void existingAccountCreation() throws Exception {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("AccountId", 2);
+        jsonObject.put("accountId", 2);
         this.mockMvc.perform(post("/account").contentType(MediaType.APPLICATION_JSON_UTF8).content(jsonObject.toString()))
                 .andDo(print())
                 .andExpect(status().isOk())

@@ -19,7 +19,7 @@ public class AccountResult {
 
     public AccountResult(Exception e) {
         this.isSuccess = false;
-        this.description = "account with that ID already exists" + e.toString();
+        this.description = "account with that ID already exists";
     }
 
     public boolean isSuccess() {
