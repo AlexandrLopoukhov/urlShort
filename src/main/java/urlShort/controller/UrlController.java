@@ -3,9 +3,11 @@ package urlShort.controller;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import urlShort.model.Account;
+import urlShort.model.ShortUrl;
 import urlShort.model.UrlData;
 import urlShort.results.ShortUrlResult;
 import urlShort.service.AccountService;
+import urlShort.service.UrlService;
 
 /**
  * Created by admin on 12/7/2016.
@@ -21,7 +23,7 @@ public class UrlController {
             throw new Exception("Don't authorized");
         }
         ShortUrl shortUrl = new ShortUrl(urlData);
-        UrlService.saveShortUrl(shortUrl);
+        UrlService.saveShortUrl(shortUrl, account);
         shortUrlResult = new ShortUrlResult(shortUrl);}
         catch(Exception e) {
             shortUrlResult = new ShortUrlResult(e);
