@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: hibernate:hibernate-tools-hibernate:3.0.0.alpha4a">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/hibernate/hibernate-tools-hibernate/3.0.0.alpha4a/hibernate-tools-hibernate-3.0.0.alpha4a.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/hibernate/hibernate-tools-hibernate/3.0.0.alpha4a/hibernate-tools-hibernate-3.0.0.alpha4a-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/hibernate/hibernate-tools-hibernate/3.0.0.alpha4a/hibernate-tools-hibernate-3.0.0.alpha4a-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

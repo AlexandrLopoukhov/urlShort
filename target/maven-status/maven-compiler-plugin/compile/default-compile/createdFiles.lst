@@ -1,0 +1,10 @@
+urlShort\controller\GreetingController.class
+urlShort\controller\AccountController.class
+urlShort\service\AccountService.class
+urlShort\Application.class
+urlShort\model\Account.class
+urlShort\model\Greeting.class
+urlShort\utils\DBInitializator.class
+urlShort\results\AccountResult.class
+urlShort\utils\PasswordGenerator.class
+urlShort\model\AccountData.class
