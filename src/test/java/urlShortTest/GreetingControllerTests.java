@@ -102,7 +102,9 @@ public class GreetingControllerTests {
         JSONObject jsonObjectUrl = new JSONObject();
         jsonObjectUrl.put("url", "http://stackoverflow.com/questions/19556039/spring-mvc-controller-rest-service-needs-access-to-header-information-how-to-do");
         jsonObjectUrl.put("redirectType", 301);
-        this.mockMvc.perform(post("/register").contentType(MediaType.APPLICATION_JSON_UTF8).header(jsonObjectHeader.toString()).content(jsonObjectUrl.toString()))
+        this.mockMvc.perform(post("/register").contentType(MediaType.APPLICATION_JSON_UTF8)
+                .header("Authorization", jsonObjectHeader)
+                .content(jsonObjectUrl.toString()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("shortUrl").isNotEmpty());

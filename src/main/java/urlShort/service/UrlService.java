@@ -13,6 +13,6 @@ public class UrlService {
 
     public static void saveShortUrl(ShortUrl shortUrl, Account account) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?)", );
+        jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), account.getAccountId());
     }
 }

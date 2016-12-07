@@ -16,14 +16,14 @@ import urlShort.service.UrlService;
 public class UrlController {
     @RequestMapping(value = "register", method = RequestMethod.POST ,consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 
-    public ShortUrlResult registerShortUrl(@RequestHeader Account account, @RequestBody UrlData urlData){
+    public ShortUrlResult registerShortUrl(@RequestHeader Account Authorization, @RequestBody UrlData urlData){
         ShortUrlResult shortUrlResult = null;
         try{
-        if (!account.getPassword().equals(AccountService.getAccountPassword(account)) && (account.getPassword() != null)) {
+        if (!Authorization.getPassword().equals(AccountService.getAccountPassword(Authorization)) && (Authorization.getPassword() != null)) {
             throw new Exception("Don't authorized");
         }
         ShortUrl shortUrl = new ShortUrl(urlData);
-        UrlService.saveShortUrl(shortUrl, account);
+        UrlService.saveShortUrl(shortUrl, Authorization);
         shortUrlResult = new ShortUrlResult(shortUrl);}
         catch(Exception e) {
             shortUrlResult = new ShortUrlResult(e);

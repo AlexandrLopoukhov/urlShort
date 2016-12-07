@@ -14,6 +14,7 @@ public class ShortUrlResult {
     }
 
     public ShortUrlResult(Exception e) {
+
     }
 
     public String getShortUrl() {
