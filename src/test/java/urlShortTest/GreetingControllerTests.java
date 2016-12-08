@@ -86,7 +86,7 @@ public class GreetingControllerTests {
     public void registerUrl() throws Exception {
         //Register Account
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("accountId", 5);
+        jsonObject.put("accountId", 3);
         this.mockMvc.perform(post("/account").contentType(MediaType.APPLICATION_JSON_UTF8).content(jsonObject.toString()))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -95,7 +95,7 @@ public class GreetingControllerTests {
                 .andExpect(jsonPath("password").isNotEmpty());
         //get Account token
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        String resultPwd = jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, 5);
+        String resultPwd = jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, 3);
         //save url
         JSONObject jsonObjectUrl = new JSONObject();
         jsonObjectUrl.put("url", "http://stackoverflow.com/questions/19556039/spring-mvc-controller-rest-service-needs-access-to-header-information-how-to-do");
@@ -111,17 +111,35 @@ public class GreetingControllerTests {
     }
 
     @Test
-    public void testUrlGenirator(){
+    public void testUrlGenirator() {
         String result = UrlGenarator.generate();
         Assert.assertNotNull(result);
     }
 
     @Test
-    public void getAccountByPassword(){
+    public void getAccountByPassword() throws Exception {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 3, "PWD");
-        int accountId = AccountService.getAccountByPassword("PWD");
-        Assert.assertEquals(3, accountId);
+        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 4, "PWD");
+        int accountId = 0;
+
+        accountId = AccountService.getAccountByPassword("PWD");
+
+        Assert.assertEquals(4, accountId);
+    }
+
+    @Test
+    public void exceptionGetAccountPassword() throws Exception {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 5, "PWD");
+        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 6, "PWD");
+        String exText = null;
+        try {
+            int accountId = AccountService.getAccountByPassword("PWD");
+        } catch (Exception e) {
+
+            exText = e.getMessage();
+        }
+        Assert.assertEquals("There are more than one account for token", exText);
 
 
     }
@@ -136,8 +154,8 @@ public class GreetingControllerTests {
     @Test
     public void getDataFromDB() throws Exception {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 3, "PWD");
-        String resultPwd = jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, 3);
+        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 7, "PWD");
+        String resultPwd = jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, 7);
         Assert.assertEquals("PWD", resultPwd);
     }
 
@@ -145,14 +163,15 @@ public class GreetingControllerTests {
     public void checkConstraintException() throws Exception {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         boolean duplicate = false;
-        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 4, "PWD");
+        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 8, "PWD");
         try {
-            jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 4, "PWD");
+            jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 8, "PWD");
         } catch (DuplicateKeyException e) {
             duplicate = true;
         }
         Assert.assertEquals(true, duplicate);
     }
+
     @After
     @Test
     public void clearTable() throws Exception {

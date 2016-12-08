@@ -1,6 +1,8 @@
 package urlShort.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import urlShort.model.ShortUrl;
 import urlShort.model.UrlData;
@@ -15,20 +17,21 @@ import urlShort.service.UrlService;
 public class UrlController {
     @RequestMapping(value = "register", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 
-    public ShortUrlResult registerShortUrl(@RequestHeader("Authorization") String password, @RequestBody UrlData urlData) {
+    public ResponseEntity<ShortUrlResult> registerShortUrl(@RequestHeader("Authorization") String password, @RequestBody UrlData urlData) {
         ShortUrlResult shortUrlResult;
-        int accountId = AccountService.getAccountByPassword(password);
+        HttpStatus status;
+        int accountId = 0;
         try {
-            if (accountId == 0) {
-                throw new Exception("Don't authorized");
-            }
+            accountId = AccountService.getAccountByPassword(password);
             ShortUrl shortUrl = new ShortUrl(urlData);
             UrlService.saveShortUrl(shortUrl, accountId);
             shortUrlResult = new ShortUrlResult(shortUrl);
+            status = HttpStatus.OK;
         } catch (Exception e) {
             shortUrlResult = new ShortUrlResult(e);
+            status = HttpStatus.BAD_REQUEST;
         }
-        return shortUrlResult;
+        return new ResponseEntity<ShortUrlResult>(shortUrlResult, status);
 
     }
 }

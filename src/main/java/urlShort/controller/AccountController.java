@@ -1,6 +1,8 @@
 package urlShort.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +21,7 @@ public class AccountController {
 
     @RequestMapping(value = "account", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 
-    public AccountResult createAccount(@RequestBody AccountData accountData) {
+    public ResponseEntity<AccountResult> createAccount(@RequestBody AccountData accountData) {
         AccountResult accountResult;
         try {
             Account account = new Account(accountData);
@@ -29,6 +31,6 @@ public class AccountController {
             accountResult = new AccountResult(e);
         }
 
-        return accountResult;
+        return new ResponseEntity<AccountResult>(accountResult, HttpStatus.OK);
     }
 }

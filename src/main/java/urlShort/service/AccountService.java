@@ -24,9 +24,17 @@ public class AccountService {
         return password;
     }
 
-    public static int getAccountByPassword(String password) {
+    public static int getAccountByPassword(String password) throws Exception {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         int accountId = 0;
+        int accountCnt = 0;
+        accountCnt = jdbcTemplate.queryForObject("SELECT count(ID) FROM " + ACCOUNT_TABLE + " WHERE PASSWORD = ?", Integer.class, password);
+        if (accountCnt > 1) {
+            throw new Exception("There are more than one account for token");
+        }
+        if (accountCnt == 0) {
+            throw new Exception("There are no account for this token");
+        }
         accountId = jdbcTemplate.queryForObject("SELECT ID FROM " + ACCOUNT_TABLE + " WHERE PASSWORD = ?", Integer.class, password);
         return accountId;
     }
