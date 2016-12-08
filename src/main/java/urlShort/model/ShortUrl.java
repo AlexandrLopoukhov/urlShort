@@ -12,7 +12,7 @@ public class ShortUrl {
 
     public ShortUrl(UrlData urlData) {
         this.url = urlData.getUrl();
-        this.redirectType = urlData.getResirectType();
+        this.redirectType = urlData.getRedirectType();
         this.shortUrl = UrlGenarator.generate();
     }
 

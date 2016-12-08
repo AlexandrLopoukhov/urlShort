@@ -20,7 +20,14 @@ public class AccountService {
     public static String getAccountPassword(Account account) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         String password = null;
-        jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, account.getAccountId());
+        password = jdbcTemplate.queryForObject("SELECT PASSWORD FROM " + ACCOUNT_TABLE + " WHERE ID = ?", String.class, account.getAccountId());
         return password;
+    }
+
+    public static int getAccountByPassword(String password) {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        int accountId = 0;
+        accountId = jdbcTemplate.queryForObject("SELECT ID FROM " + ACCOUNT_TABLE + " WHERE PASSWORD = ?", Integer.class, password);
+        return accountId;
     }
 }

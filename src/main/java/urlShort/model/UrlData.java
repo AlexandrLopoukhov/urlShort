@@ -5,10 +5,13 @@ package urlShort.model;
  */
 public class UrlData {
     private String url = null;
-    private int resirectType = 301;
 
-    public int getResirectType() {
-        return resirectType;
+
+    private int redirectType = 301;
+
+
+    public int getRedirectType() {
+        return redirectType;
     }
 
     public String getUrl() {

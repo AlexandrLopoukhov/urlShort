@@ -9,7 +9,7 @@ import urlShort.utils.PasswordGenerator;
 
 public class Account {
 
-    private String accountId = null;
+    private int accountId;
     private String password = null;
 
     public Account(AccountData accountData) {
@@ -17,7 +17,7 @@ public class Account {
         this.password = PasswordGenerator.generate();
     }
 
-    public String getAccountId() {
+    public int getAccountId() {
         return accountId;
     }
 

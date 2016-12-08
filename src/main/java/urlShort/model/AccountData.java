@@ -4,9 +4,9 @@ package urlShort.model;
  * Created by admin on 12/4/2016.
  */
 public class AccountData {
-    private String accountId = null;
+    private int accountId;
 
-    public String getAccountId() {
+    public int getAccountId() {
         return accountId;
     }
 }

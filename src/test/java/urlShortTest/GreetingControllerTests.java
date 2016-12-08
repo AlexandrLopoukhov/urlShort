@@ -15,7 +15,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import urlShort.Application;
+import urlShort.service.AccountService;
 import urlShort.utils.DBInitializator;
+import urlShort.utils.UrlGenarator;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -94,20 +96,32 @@ public class GreetingControllerTests {
         //get Account token
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         String resultPwd = jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, 5);
-        //create header
-        JSONObject jsonObjectHeader = new JSONObject();
-        jsonObjectHeader.put("accountId", 5);
-        jsonObjectHeader.put("password", resultPwd);
         //save url
         JSONObject jsonObjectUrl = new JSONObject();
         jsonObjectUrl.put("url", "http://stackoverflow.com/questions/19556039/spring-mvc-controller-rest-service-needs-access-to-header-information-how-to-do");
         jsonObjectUrl.put("redirectType", 301);
         this.mockMvc.perform(post("/register").contentType(MediaType.APPLICATION_JSON_UTF8)
-                .header("Authorization", jsonObjectHeader)
+                .header("Authorization", resultPwd)
                 .content(jsonObjectUrl.toString()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("shortUrl").isNotEmpty());
+
+
+    }
+
+    @Test
+    public void testUrlGenirator(){
+        String result = UrlGenarator.generate();
+        Assert.assertNotNull(result);
+    }
+
+    @Test
+    public void getAccountByPassword(){
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 3, "PWD");
+        int accountId = AccountService.getAccountByPassword("PWD");
+        Assert.assertEquals(3, accountId);
 
 
     }

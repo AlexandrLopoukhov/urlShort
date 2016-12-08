@@ -14,6 +14,7 @@ public class ShortUrlResult {
     }
 
     public ShortUrlResult(Exception e) {
+        this.shortUrl = null;
 
     }
 

@@ -1,7 +1,6 @@
 package urlShort.service;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import urlShort.model.Account;
 import urlShort.model.ShortUrl;
 import urlShort.utils.DBInitializator;
 
@@ -11,8 +10,8 @@ import urlShort.utils.DBInitializator;
 public class UrlService {
     private static final String URL_TABLE = "URLS";
 
-    public static void saveShortUrl(ShortUrl shortUrl, Account account) {
+    public static void saveShortUrl(ShortUrl shortUrl, int accountId) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), account.getAccountId());
+        jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), accountId);
     }
 }
