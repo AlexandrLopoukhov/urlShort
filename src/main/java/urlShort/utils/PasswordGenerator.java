@@ -1,5 +1,7 @@
 package urlShort.utils;
 
+import urlShort.service.AccountService;
+
 import java.security.SecureRandom;
 
 /**
@@ -11,7 +13,9 @@ public class PasswordGenerator {
 
     public static String generate() {
 
-        String password = RandomStringGenerator.generate(PASSWORD_LENGTH);
+        String password = null;
+        while(password == null || AccountService.isPasswordExist(password))
+                password = RandomStringGenerator.generate(PASSWORD_LENGTH);
         return  password;
         //return "1";
     }

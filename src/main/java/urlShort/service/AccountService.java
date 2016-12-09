@@ -11,9 +11,9 @@ import urlShort.utils.DBInitializator;
 public class AccountService {
     private static final String ACCOUNT_TABLE = "ACCOUNT";
 
-    public static void saveAccount(Account account){
+    public static void saveAccount(Account account) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        jdbcTemplate.update("INSERT INTO " + ACCOUNT_TABLE + " VALUES(?, ?)", account.getAccountId(),account.getPassword());
+        jdbcTemplate.update("INSERT INTO " + ACCOUNT_TABLE + " VALUES(?, ?)", account.getAccountId(), account.getPassword());
 
     }
 
@@ -38,5 +38,13 @@ public class AccountService {
         }
         accountId = jdbcTemplate.queryForObject("SELECT ID FROM " + ACCOUNT_TABLE + " WHERE PASSWORD = ?", Integer.class, password);
         return accountId;
+    }
+
+    public static boolean isPasswordExist(String password) {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        int accountCnt = 0;
+        accountCnt = jdbcTemplate.queryForObject("SELECT count(ID) FROM " + ACCOUNT_TABLE + " WHERE PASSWORD = ?", Integer.class, password);
+        if (accountCnt > 0) return true;
+        else return false;
     }
 }

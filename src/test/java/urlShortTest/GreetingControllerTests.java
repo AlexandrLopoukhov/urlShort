@@ -149,6 +149,13 @@ public class GreetingControllerTests {
         Assert.assertEquals(5 ,result.length());
     }
 
+    @Test
+    public void getStatistic() throws Exception {
+        this.mockMvc.perform(get("/statistic/3"))
+                .andDo(print())
+                .andExpect(status().isOk());
+
+    }
     //DB part
     @Before
     @Test
