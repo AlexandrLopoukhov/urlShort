@@ -17,13 +17,13 @@ public class StatisticService {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         Map<String, Integer> statisticMap = new HashMap<>();
         Map<String, Object> iterateList = new HashMap<>();
-        statisticMap.put("1", 1);
+        statisticMap.put("1", 2);
         statisticMap.put("2", 2);
 
         iterateList = jdbcTemplate.queryForMap("SELECT URL, COUNTER FROM " + STATISTIC_TABLE + " WHERE ID = ?", accountId);
-        /*for (Map.Entry<String, Object> entry : iterateList.entrySet()) {
-            statisticMap.put(entry.getKey(), (Integer) entry.getValue());
-        }*/
+        for (Map.Entry<String, Object> entry : iterateList.entrySet()) {
+            statisticMap.put(entry.getKey(),  entry.getValue());
+        }
        /* ListIterator<Map<String, Object>> iterateListIterator = iterateList.listIterator();
         while (iterateListIterator.hasNext()) {
             Map<String, Object> iterateMap = iterateListIterator.next();
