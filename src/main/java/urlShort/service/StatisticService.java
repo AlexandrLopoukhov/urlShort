@@ -21,13 +21,9 @@ public class StatisticService {
         List<Map<String, Object>> iterateList;
         String url = null;
         int cnt = 0;
-        statisticMap.put("1", 2);
-        statisticMap.put("2", 2);
 
         iterateList = jdbcTemplate.queryForList("SELECT URL, COUNTER FROM " + STATISTIC_TABLE + " WHERE ID = ?", accountId);
-       /* for (Map.Entry<String, Object> entry : iterateList.entrySet()) {
-            statisticMap.put(entry.getKey(),  entry.getValue());
-        }*/
+
         ListIterator<Map<String, Object>> iterateListIterator = iterateList.listIterator();
         while (iterateListIterator.hasNext()) {
             Map<String, Object> iterateMap = iterateListIterator.next();
