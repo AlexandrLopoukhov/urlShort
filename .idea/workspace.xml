@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aafa42d-2d39-4a6a-8af4-60ca227254c4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/urlShort/controller/StatisticController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/urlShort/service/StatisticService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/urlShort/service/AccountService.class" afterPath="$PROJECT_DIR$/target/classes/urlShort/service/AccountService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/urlShort/utils/PasswordGenerator.class" afterPath="$PROJECT_DIR$/target/classes/urlShort/utils/PasswordGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/urlShortTest/GreetingControllerTests.class" afterPath="$PROJECT_DIR$/target/test-classes/urlShortTest/GreetingControllerTests.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/controller/StatisticController.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/controller/StatisticController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/service/UrlService.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/service/UrlService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/utils/UrlGenarator.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/utils/UrlGenarator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource/create-table.sql" afterPath="$PROJECT_DIR$/src/resource/create-table.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java" afterPath="$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,7 +22,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/urlShort$All_in_urlShort.coverage" NAME="All in urlShort Coverage Results" MODIFIED="1481099592700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/urlShort$GreetingControllerTests.coverage" NAME="GreetingControllerTests Coverage Results" MODIFIED="1481283717895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/urlShort$GreetingControllerTests.coverage" NAME="GreetingControllerTests Coverage Results" MODIFIED="1481287681080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -34,11 +33,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StatisticController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StatisticController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/StatisticController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="323">
+              <caret line="20" column="112" lean-forward="true" selection-start-line="20" selection-start-column="112" selection-end-line="20" selection-end-column="112" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/service/StatisticService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,42 +60,33 @@
       <file leaf-file-name="StaticticResult.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+            <state relative-caret-position="289">
+              <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
               <folding>
-                <element signature="e#163#164#0" expanded="true" />
-                <element signature="e#212#213#0" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
+                <element signature="e#217#218#0" expanded="true" />
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#491#492#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/AccountController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="33" column="77" lean-forward="false" selection-start-line="33" selection-start-column="77" selection-end-line="33" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GreetingControllerTests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GreetingControllerTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="153" column="46" lean-forward="false" selection-start-line="153" selection-start-column="46" selection-end-line="153" selection-end-column="46" />
+            <state relative-caret-position="205">
+              <caret line="157" column="16" lean-forward="false" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GreetingController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/GreetingController.java">
+      <file leaf-file-name="create-table.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resource/create-table.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -120,7 +122,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/results/AccountResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/model/ShortUrl.java" />
-        <option value="$PROJECT_DIR$/src/resource/create-table.sql" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/model/UrlData.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/model/AccountData.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/model/Account.java" />
@@ -130,11 +131,13 @@
         <option value="$PROJECT_DIR$/src/main/java/urlShort/utils/RandomStringGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/utils/UrlGenarator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/service/UrlService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" />
         <option value="$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/controller/StatisticController.java" />
+        <option value="$PROJECT_DIR$/src/resource/create-table.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/urlShort/service/StatisticService.java" />
       </list>
     </option>
   </component>
@@ -442,10 +445,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="urlShort.service" />
       <recent name="urlShort.results" />
       <recent name="urlShort.utils" />
       <recent name="urlShort.model" />
-      <recent name="urlShort.service" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.GreetingControllerTests">
@@ -880,44 +883,51 @@
       <option name="project" value="LOCAL" />
       <updated>1481276135399</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="statistic controller&#10;">
+      <created>1481283755142</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1481283755142</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 12h 32m 04s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 56m 08s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 12h 33m 17s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 03m 57s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 12h 35m 14s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 07m 10s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 09m 02s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 29m 28s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 29m 09s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 31m 19s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 31m 59s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 32m 39s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 38m 22s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 34m 52s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 39m 31s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 36m 18s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 41m 05s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 38m 02s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GreetingControllerTests - 2016.12.09 at 14h 42m 10s.xml">
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 15h 48m 13s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -939,11 +949,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32940018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3402163" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23827292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -971,7 +981,8 @@
     <MESSAGE value="generate password&#10;" />
     <MESSAGE value="generate short url&#10;" />
     <MESSAGE value="refactor url and password generators&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor url and password generators&#10;" />
+    <MESSAGE value="statistic controller&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="statistic controller&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1094,16 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/model/ShortUrl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1130,26 +1131,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="47" column="26" lean-forward="true" selection-start-line="43" selection-start-column="8" selection-end-line="47" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/utils/UrlGenarator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resource/create-table.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1191,33 +1176,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        <state relative-caret-position="246">
+          <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="107" />
           <folding>
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="153" column="46" lean-forward="false" selection-start-line="153" selection-start-column="46" selection-end-line="153" selection-end-column="46" />
+        <state relative-caret-position="340">
+          <caret line="22" column="144" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="144" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource/create-table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/StatisticController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        <state relative-caret-position="323">
+          <caret line="20" column="112" lean-forward="true" selection-start-line="20" selection-start-column="112" selection-end-line="20" selection-end-column="112" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/results/StaticticResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding>
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/service/StatisticService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="157" column="16" lean-forward="false" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

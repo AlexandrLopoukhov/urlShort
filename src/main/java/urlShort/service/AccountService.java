@@ -24,6 +24,13 @@ public class AccountService {
         return password;
     }
 
+    public static String getAccountPassword(int accountId) {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        String password = null;
+        password = jdbcTemplate.queryForObject("SELECT PASSWORD FROM " + ACCOUNT_TABLE + " WHERE ID = ?", String.class, accountId);
+        return password;
+    }
+
     public static int getAccountByPassword(String password) throws Exception {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         int accountId = 0;

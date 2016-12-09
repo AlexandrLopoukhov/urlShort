@@ -53,9 +53,12 @@ public class GreetingControllerTests {
     }
 
     @Test
-    public void createAccount() throws Exception {
+    public void testCreateAccount() throws Exception {
+        createAccount(1);
+    }
+    public void createAccount(int accountId) throws Exception {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("accountId", 1);
+        jsonObject.put("accountId", accountId);
         this.mockMvc.perform(post("/account").contentType(MediaType.APPLICATION_JSON_UTF8).content(jsonObject.toString()))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -84,10 +87,14 @@ public class GreetingControllerTests {
     }
 
     @Test
-    public void registerUrl() throws Exception {
+    public void testRegisterUrl() throws Exception {
+        registerUrl(1);
+    }
+
+    public void registerUrl(int accountId) throws Exception {
         //Register Account
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("accountId", 3);
+        jsonObject.put("accountId", accountId);
         this.mockMvc.perform(post("/account").contentType(MediaType.APPLICATION_JSON_UTF8).content(jsonObject.toString()))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -96,7 +103,7 @@ public class GreetingControllerTests {
                 .andExpect(jsonPath("password").isNotEmpty());
         //get Account token
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        String resultPwd = jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, 3);
+        String resultPwd = jdbcTemplate.queryForObject("SELECT PASSWORD FROM ACCOUNT WHERE ID = ?", String.class, accountId);
         //save url
         JSONObject jsonObjectUrl = new JSONObject();
         jsonObjectUrl.put("url", "http://stackoverflow.com/questions/19556039/spring-mvc-controller-rest-service-needs-access-to-header-information-how-to-do");
@@ -107,8 +114,6 @@ public class GreetingControllerTests {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("shortUrl").isNotEmpty());
-
-
     }
 
     @Test
@@ -129,7 +134,7 @@ public class GreetingControllerTests {
     }
 
     @Test
-    public void exceptionGetAccountPassword() throws Exception {
+    public void exceptionGetAccountByPassword() throws Exception {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 5, "PWD");
         jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 6, "PWD");
@@ -151,7 +156,9 @@ public class GreetingControllerTests {
 
     @Test
     public void getStatistic() throws Exception {
-        this.mockMvc.perform(get("/statistic/3"))
+        registerUrl(1);
+        String password = AccountService.getAccountPassword(1);
+        this.mockMvc.perform(get("/statistic/1").header("Authorization", password))
                 .andDo(print())
                 .andExpect(status().isOk());
 

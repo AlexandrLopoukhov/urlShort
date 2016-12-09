@@ -1,16 +1,31 @@
 package urlShort.results;
 
+import java.util.Map;
+
 /**
  * Created by admin on 12/9/2016.
  */
 public class StaticticResult {
-    public StaticticResult(String i) {
-        this.i = i;
+    Map<String, Integer> statisticMap;
+    String error = null;
+
+    public String getError() {
+        return error;
     }
 
-    String i = "3";
+    public StaticticResult(Exception e) {
 
-    public String getI() {
-        return i;
+        this.error = e.toString();
+    }
+
+    public StaticticResult(Map<String, Integer> statisticMap) {
+
+
+    }
+
+    public Map<String, Integer> getStatisticMap() {
+        return statisticMap;
     }
 }
+
+
