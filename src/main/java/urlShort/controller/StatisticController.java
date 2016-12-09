@@ -12,9 +12,9 @@ import urlShort.service.StatisticService;
  * Created by admin on 12/9/2016.
  */
 @RestController
-@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping
 public class StatisticController {
-    @RequestMapping(value = "statistic/{accountId}", method = RequestMethod.GET)
+    @RequestMapping(value = "statistic/{accountId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StaticticResult> getStatistic(@RequestHeader("Authorization") String password, @PathVariable int accountId) {
         StaticticResult staticticResult;
         try {

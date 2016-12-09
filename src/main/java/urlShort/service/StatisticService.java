@@ -3,6 +3,7 @@ package urlShort.service;
 import org.springframework.jdbc.core.JdbcTemplate;
 import urlShort.utils.DBInitializator;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -14,18 +15,22 @@ public class StatisticService {
 
     public static Map<String, Integer> getStatistic(int accountId) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        Map<String, Integer> statisticMap = null;
-     /*   List<Map<String, Object>> iterateList;
+        Map<String, Integer> statisticMap = new HashMap<>();
+        Map<String, Object> iterateList = new HashMap<>();
+        statisticMap.put("1", 1);
+        statisticMap.put("2", 2);
 
-        iterateList = jdbcTemplate.queryForList("SELECT URL, COUNTER FROM " + STATISTIC_TABLE + " WHERE ID = ?", accountId);
-        ListIterator<Map<String, Object>> iterateListIterator = iterateList.listIterator();
+        iterateList = jdbcTemplate.queryForMap("SELECT URL, COUNTER FROM " + STATISTIC_TABLE + " WHERE ID = ?", accountId);
+        /*for (Map.Entry<String, Object> entry : iterateList.entrySet()) {
+            statisticMap.put(entry.getKey(), (Integer) entry.getValue());
+        }*/
+       /* ListIterator<Map<String, Object>> iterateListIterator = iterateList.listIterator();
         while (iterateListIterator.hasNext()) {
             Map<String, Object> iterateMap = iterateListIterator.next();
             for (Map.Entry<String, Object> entry : iterateMap.entrySet()) {
-                statisticMap.put(entry.getKey(), Integer.valueOf(entry.getKey()));
+                statisticMap.put(entry.getKey(), (Integer) entry.getValue());
             }
-        }
-*/
+        }*/
         return statisticMap;
     }
 

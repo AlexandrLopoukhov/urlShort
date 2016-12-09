@@ -1,12 +1,15 @@
 package urlShort.results;
 
+import org.codehaus.jackson.map.ObjectMapper;
+
+import java.io.IOException;
 import java.util.Map;
 
 /**
  * Created by admin on 12/9/2016.
  */
 public class StaticticResult {
-    Map<String, Integer> statisticMap;
+    String statisticMap;
     String re;
 
     public String getRe() {
@@ -19,12 +22,16 @@ public class StaticticResult {
     }
 
     public StaticticResult(Map<String, Integer> statisticMap) {
-        this.statisticMap = statisticMap;
+        try {
+            this.statisticMap = new ObjectMapper().writeValueAsString(statisticMap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
 
-    public Map<String, Integer> getStatisticMap() {
+    public String getStatisticMap() {
         return statisticMap;
     }
 }
