@@ -28,6 +28,7 @@ public class AccountService {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         int accountId = 0;
         int accountCnt = 0;
+        //Digital Signature (public/private key pair) better solution for real up
         accountCnt = jdbcTemplate.queryForObject("SELECT count(ID) FROM " + ACCOUNT_TABLE + " WHERE PASSWORD = ?", Integer.class, password);
         if (accountCnt > 1) {
             throw new Exception("There are more than one account for token");

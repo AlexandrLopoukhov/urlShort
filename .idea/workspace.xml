@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aafa42d-2d39-4a6a-8af4-60ca227254c4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/urlShort/model/Account.class" afterPath="$PROJECT_DIR$/target/classes/urlShort/model/Account.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/urlShort/model/AccountData.class" afterPath="$PROJECT_DIR$/target/classes/urlShort/model/AccountData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/urlShort/service/AccountService.class" afterPath="$PROJECT_DIR$/target/classes/urlShort/service/AccountService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/urlShortTest/GreetingControllerTests.class" afterPath="$PROJECT_DIR$/target/test-classes/urlShortTest/GreetingControllerTests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/urlShort/controller/AccountController.class" afterPath="$PROJECT_DIR$/target/classes/urlShort/controller/AccountController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/controller/AccountController.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/controller/AccountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java" afterPath="$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +17,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/urlShort$All_in_urlShort.coverage" NAME="All in urlShort Coverage Results" MODIFIED="1481099592700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/urlShort$GreetingControllerTests.coverage" NAME="GreetingControllerTests Coverage Results" MODIFIED="1481192294513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/urlShort$GreetingControllerTests.coverage" NAME="GreetingControllerTests Coverage Results" MODIFIED="1481275160815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,18 +31,18 @@
       <file leaf-file-name="AccountService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="35" column="68" lean-forward="false" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+            <state relative-caret-position="459">
+              <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UrlController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UrlController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="305">
-              <caret line="24" column="70" lean-forward="false" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+              <caret line="24" column="50" lean-forward="false" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasswordGenerator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PasswordGenerator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="153">
+              <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -134,8 +129,9 @@
         <option value="$PROJECT_DIR$/src/main/java/urlShort/results/ShortUrlResult.java" />
         <option value="$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/controller/AccountController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java" />
       </list>
     </option>
   </component>
@@ -853,13 +849,17 @@
       <option name="project" value="LOCAL" />
       <updated>1481189126386</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="low refactoring&#10;">
+      <created>1481192324361</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1481192324361</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GreetingControllerTests - 2016.12.08 at 12h 24m 45s.xml">
-      <configuration name="GreetingControllerTests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GreetingControllerTests - 2016.12.08 at 12h 29m 34s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
@@ -885,6 +885,9 @@
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="GreetingControllerTests - 2016.12.08 at 13h 18m 27s.xml">
+      <configuration name="GreetingControllerTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GreetingControllerTests - 2016.12.09 at 12h 19m 34s.xml">
       <configuration name="GreetingControllerTests" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -940,7 +943,8 @@
     <MESSAGE value="url fake" />
     <MESSAGE value="header should be changed to String" />
     <MESSAGE value="short url registration&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="short url registration&#10;" />
+    <MESSAGE value="low refactoring&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="low refactoring&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1108,18 +1112,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="1700">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="24" column="50" lean-forward="false" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/service/AccountService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="35" column="68" lean-forward="false" selection-start-line="35" selection-start-column="68" selection-end-line="35" selection-end-column="68" />
+        <state relative-caret-position="459">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1132,21 +1146,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/utils/PasswordGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/controller/UrlController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="24" column="70" lean-forward="false" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
