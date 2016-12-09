@@ -11,17 +11,8 @@ public class PasswordGenerator {
 
     public static String generate() {
 
-
-        StringBuilder password = new StringBuilder();
-        while (password.length() < PASSWORD_LENGTH) {
-            char character = (char) random.nextInt(Character.MAX_VALUE);
-            if ((character >= 'a' && character <= 'z')
-                    || (character >= 'A' && character <= 'Z')
-                    || (character >= '0' && character <= '9')) {
-                password.append(character);
-            }
-        }
-        return password.toString();
+        String password = RandomStringGenerator.generate(PASSWORD_LENGTH);
+        return  password;
         //return "1";
     }
 }

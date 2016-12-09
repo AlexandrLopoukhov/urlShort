@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import urlShort.Application;
 import urlShort.service.AccountService;
 import urlShort.utils.DBInitializator;
+import urlShort.utils.RandomStringGenerator;
 import urlShort.utils.UrlGenarator;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -140,8 +141,12 @@ public class GreetingControllerTests {
             exText = e.getMessage();
         }
         Assert.assertEquals("There are more than one account for token", exText);
+    }
 
-
+    @Test
+    public void randomStringGenerator(){
+        String result = RandomStringGenerator.generate(5);
+        Assert.assertEquals(5 ,result.length());
     }
 
     //DB part
