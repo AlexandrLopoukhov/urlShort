@@ -4,6 +4,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import urlShort.utils.DBInitializator;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 
 /**
@@ -16,21 +18,29 @@ public class StatisticService {
     public static Map<String, Integer> getStatistic(int accountId) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         Map<String, Integer> statisticMap = new HashMap<>();
-        Map<String, Object> iterateList = new HashMap<>();
+        List<Map<String, Object>> iterateList;
+        String url = null;
+        int cnt = 0;
         statisticMap.put("1", 2);
         statisticMap.put("2", 2);
 
-        iterateList = jdbcTemplate.queryForMap("SELECT URL, COUNTER FROM " + STATISTIC_TABLE + " WHERE ID = ?", accountId);
-        for (Map.Entry<String, Object> entry : iterateList.entrySet()) {
+        iterateList = jdbcTemplate.queryForList("SELECT URL, COUNTER FROM " + STATISTIC_TABLE + " WHERE ID = ?", accountId);
+       /* for (Map.Entry<String, Object> entry : iterateList.entrySet()) {
             statisticMap.put(entry.getKey(),  entry.getValue());
-        }
-       /* ListIterator<Map<String, Object>> iterateListIterator = iterateList.listIterator();
+        }*/
+        ListIterator<Map<String, Object>> iterateListIterator = iterateList.listIterator();
         while (iterateListIterator.hasNext()) {
             Map<String, Object> iterateMap = iterateListIterator.next();
             for (Map.Entry<String, Object> entry : iterateMap.entrySet()) {
-                statisticMap.put(entry.getKey(), (Integer) entry.getValue());
+                switch (entry.getKey()) {
+                    case "URL" : url = (String) entry.getValue();
+                    break;
+                    case "COUNTER" : cnt = (int) entry.getValue();
+                    break;
+                }
             }
-        }*/
+            statisticMap.put(url, cnt);
+        }
         return statisticMap;
     }
 
