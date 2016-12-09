@@ -18,7 +18,7 @@ public class StatisticController {
     public ResponseEntity<StaticticResult> getStatistic(@RequestHeader("Authorization") String password, @PathVariable int accountId) {
         StaticticResult staticticResult;
         try {
-            if (AccountService.getAccountPassword(accountId) != password || password == null || accountId == 0) {
+            if (!AccountService.getAccountPassword(accountId).equals(password) || password == null || accountId == 0) {
                 throw new Exception("Password don't match or data invalid");
             }
             staticticResult = new StaticticResult(StatisticService.getStatistic(accountId));
