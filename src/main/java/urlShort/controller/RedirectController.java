@@ -15,6 +15,7 @@ import java.io.IOException;
  */
 @RestController
 public class RedirectController {
+    //TODO add redirect type
     @RequestMapping(value = "r/{path}", method = RequestMethod.GET)
     public void redirect(HttpServletResponse httpServletResponse, @PathVariable String path){
         String url;

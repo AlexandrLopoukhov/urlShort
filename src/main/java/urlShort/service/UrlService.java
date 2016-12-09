@@ -10,6 +10,7 @@ import urlShort.utils.DBInitializator;
 public class UrlService {
     private static final String URL_TABLE = "URLS";
 
+//TODO add redirect type
     public static void saveShortUrl(ShortUrl shortUrl, int accountId) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), accountId);

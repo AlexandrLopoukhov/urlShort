@@ -9,7 +9,7 @@ public class ShortUrl {
     private String url;
     private String shortUrl;
     private int redirectType;
-
+//TODO add redirect type
     public ShortUrl(UrlData urlData) {
         this.url = urlData.getUrl();
         this.redirectType = urlData.getRedirectType();
