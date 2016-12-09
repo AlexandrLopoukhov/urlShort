@@ -22,4 +22,11 @@ public class UrlService {
         if (shortUrlCnt > 0) return true;
         else return false;
     }
+
+    public static String getUrlByShortUrl(String shortUrl) {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        String url;
+        url = jdbcTemplate.queryForObject("SELECT URL FROM " + URL_TABLE + " WHERE SHORT_URL = ?", String.class, shortUrl);
+        return url;
+    }
 }

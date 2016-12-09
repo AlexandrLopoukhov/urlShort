@@ -7,18 +7,16 @@ import java.util.Map;
  */
 public class StaticticResult {
     Map<String, Integer> statisticMap;
-    String error = null;
 
-    public String getError() {
-        return error;
-    }
+
+
 
     public StaticticResult(Exception e) {
 
-        this.error = e.toString();
     }
 
     public StaticticResult(Map<String, Integer> statisticMap) {
+        this.statisticMap = statisticMap;
 
 
     }
