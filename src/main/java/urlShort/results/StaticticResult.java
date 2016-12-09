@@ -7,11 +7,14 @@ import java.util.Map;
  */
 public class StaticticResult {
     Map<String, Integer> statisticMap;
+    String re;
 
-
-
+    public String getRe() {
+        return re;
+    }
 
     public StaticticResult(Exception e) {
+        re = e.toString();
 
     }
 

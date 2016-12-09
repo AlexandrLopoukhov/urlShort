@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import urlShort.service.StatisticService;
 import urlShort.service.UrlService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ public class RedirectController {
     public void redirect(HttpServletResponse httpServletResponse, @PathVariable String path){
         String url;
         url = UrlService.getUrlByShortUrl(path);
+        StatisticService.setRedirected(path);
         try {
             httpServletResponse.sendRedirect(url);
         } catch (IOException e) {

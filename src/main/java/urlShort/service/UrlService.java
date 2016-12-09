@@ -13,6 +13,7 @@ public class UrlService {
     public static void saveShortUrl(ShortUrl shortUrl, int accountId) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), accountId);
+        StatisticService.initStatisticForUrl(shortUrl.getShortUrl(), accountId);
     }
 
     public static boolean isShortUrlExist(String shortUrl) {
