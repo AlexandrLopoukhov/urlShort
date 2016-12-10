@@ -19,9 +19,12 @@ public class RedirectController {
     @RequestMapping(value = "r/{path}", method = RequestMethod.GET)
     public void redirect(HttpServletResponse httpServletResponse, @PathVariable String path){
         String url;
+        int status;
         url = UrlService.getUrlByShortUrl(path);
+        status = UrlService.getRedirectType(path);
         StatisticService.setRedirected(path);
         try {
+            httpServletResponse.setStatus(status);
             httpServletResponse.sendRedirect(url);
         } catch (IOException e) {
             e.printStackTrace();

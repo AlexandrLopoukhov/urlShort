@@ -10,10 +10,15 @@ public class ShortUrl {
     private String shortUrl;
     private int redirectType;
 //TODO add redirect type
+
     public ShortUrl(UrlData urlData) {
         this.url = urlData.getUrl();
         this.redirectType = urlData.getRedirectType();
         this.shortUrl = UrlGenarator.generate();
+    }
+
+    public int getRedirectType() {
+        return redirectType;
     }
 
     public String getUrl() {

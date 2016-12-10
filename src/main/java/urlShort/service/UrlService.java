@@ -13,7 +13,7 @@ public class UrlService {
 //TODO add redirect type
     public static void saveShortUrl(ShortUrl shortUrl, int accountId) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
-        jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), accountId);
+        jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), shortUrl.getRedirectType(), accountId);
         StatisticService.initStatisticForUrl(shortUrl.getShortUrl(), accountId);
     }
 
@@ -30,5 +30,12 @@ public class UrlService {
         String url;
         url = jdbcTemplate.queryForObject("SELECT URL FROM " + URL_TABLE + " WHERE SHORT_URL = ?", String.class, shortUrl);
         return url;
+    }
+
+    public static int getRedirectType(String shortUrl) {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        int redirectType;
+        redirectType = jdbcTemplate.queryForObject("SELECT REDIRECT_TYPE FROM " + URL_TABLE + " WHERE SHORT_URL = ?", Integer.class, shortUrl);
+        return redirectType;
     }
 }
