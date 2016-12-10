@@ -38,6 +38,8 @@ public class StatisticService {
         return statisticMap;
     }
 
+
+    @Deprecated
     public static int getCounterByShortUrl(String shortUrl) {
         String url;
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
@@ -62,8 +64,7 @@ public class StatisticService {
         jdbcTemplate.update("INSERT INTO " + STATISTIC_TABLE + " VALUES(?, ?, ?)", date, url, id);
 
     }
-
-
+    @Deprecated
     public static void initStatisticForUrl(String shortUrl, int accountId) {
         String url;
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
