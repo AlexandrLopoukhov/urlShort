@@ -3,10 +3,8 @@ package urlShort.service;
 import org.springframework.jdbc.core.JdbcTemplate;
 import urlShort.utils.DBInitializator;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
+import java.sql.Date;
+import java.util.*;
 
 /**
  * Created by admin on 12/9/2016.
@@ -22,7 +20,7 @@ public class StatisticService {
         String url = null;
         int cnt = 0;
 
-        iterateList = jdbcTemplate.queryForList("SELECT URL, COUNTER FROM " + STATISTIC_TABLE + " WHERE ID = ?", accountId);
+        iterateList = jdbcTemplate.queryForList("SELECT URL, COUNT(REDIRECT_DATE) FROM " + STATISTIC_TABLE + " WHERE ID = ? GROUP BY URL", accountId);
 
         ListIterator<Map<String, Object>> iterateListIterator = iterateList.listIterator();
         while (iterateListIterator.hasNext()) {
@@ -31,7 +29,7 @@ public class StatisticService {
                 switch (entry.getKey()) {
                     case "URL" : url = (String) entry.getValue();
                     break;
-                    case "COUNTER" : cnt = (int) entry.getValue();
+                    case "COUNT(REDIRECT_DATE)" : cnt =  (int) (long) entry.getValue();
                     break;
                 }
             }
@@ -52,13 +50,16 @@ public class StatisticService {
     }
 
     public static void setRedirected(String shortUrl) {
-        int cnt;
+        //int cnt;
         String url;
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        int id;
 
-        cnt = getCounterByShortUrl(shortUrl) + 1;
+       //cnt = getCounterByShortUrl(shortUrl) + 1;
         url = UrlService.getUrlByShortUrl(shortUrl);
-        jdbcTemplate.update("UPDATE " + STATISTIC_TABLE + " SET COUNTER = ? WHERE URL = ?", cnt, url);
+        id = UrlService.getIdByShortUrl(shortUrl);
+        Date date = new Date(new java.util.Date().getDate());
+        jdbcTemplate.update("INSERT INTO " + STATISTIC_TABLE + " VALUES(?, ?, ?)", date, url, id);
 
     }
 

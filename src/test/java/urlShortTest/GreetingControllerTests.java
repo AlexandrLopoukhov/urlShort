@@ -16,9 +16,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import urlShort.Application;
 import urlShort.service.AccountService;
+import urlShort.service.StatisticService;
+import urlShort.service.UrlService;
 import urlShort.utils.DBInitializator;
 import urlShort.utils.RandomStringGenerator;
 import urlShort.utils.UrlGenarator;
+
+import java.util.Map;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -161,6 +165,33 @@ public class GreetingControllerTests {
         this.mockMvc.perform(get("/statistic/1").header("Authorization", password))
                 .andDo(print())
                 .andExpect(status().isOk());
+
+    }
+    @Test
+    public void getStatisticWithRedirect() throws Exception {
+        registerUrl(10);
+        String password = AccountService.getAccountPassword(10);
+        String shortUrl = UrlService.getShortUrlById(10);
+        this.mockMvc.perform(get("/r/" + shortUrl));
+        this.mockMvc.perform(get("/statistic/10").header("Authorization", password))
+                .andDo(print())
+                .andExpect(status().isOk());
+
+    }
+    @Test
+    public void getDateOfStatisticWithRedirect() throws Exception {
+        registerUrl(11);
+        String password = AccountService.getAccountPassword(11);
+        String shortUrl = UrlService.getShortUrlById(11);
+
+        this.mockMvc.perform(get("/r/" + shortUrl));
+        this.mockMvc.perform(get("/r/" + shortUrl));
+        Map<String, Integer> map = StatisticService.getStatistic(11);
+        for (Map.Entry<String, Integer> m : map.entrySet()) {
+            System.out.println(m.getKey());
+            System.out.println(m.getValue());
+        }
+        Assert.assertTrue(!map.isEmpty());
 
     }
     //DB part

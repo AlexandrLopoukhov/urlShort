@@ -14,7 +14,7 @@ public class UrlService {
     public static void saveShortUrl(ShortUrl shortUrl, int accountId) {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         jdbcTemplate.update("INSERT INTO " + URL_TABLE + " VALUES(?, ?, ?, ?)", shortUrl.getShortUrl(), shortUrl.getUrl(), shortUrl.getRedirectType(), accountId);
-        StatisticService.initStatisticForUrl(shortUrl.getShortUrl(), accountId);
+        //StatisticService.initStatisticForUrl(shortUrl.getShortUrl(), accountId);
     }
 
     public static boolean isShortUrlExist(String shortUrl) {
@@ -37,5 +37,20 @@ public class UrlService {
         int redirectType;
         redirectType = jdbcTemplate.queryForObject("SELECT REDIRECT_TYPE FROM " + URL_TABLE + " WHERE SHORT_URL = ?", Integer.class, shortUrl);
         return redirectType;
+    }
+
+    public static int getIdByShortUrl(String shortUrl) {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        int id;
+        id = jdbcTemplate.queryForObject("SELECT ID FROM " + URL_TABLE + " WHERE SHORT_URL = ?", Integer.class, shortUrl);
+        return id;
+    }
+
+    //for tests
+    public static String getShortUrlById(int id) {
+        JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
+        String shortUrl;
+        shortUrl = jdbcTemplate.queryForObject("SELECT SHORT_URL FROM " + URL_TABLE + " WHERE ID = ?", String.class, id);
+        return shortUrl;
     }
 }
