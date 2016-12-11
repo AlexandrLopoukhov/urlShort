@@ -2,12 +2,10 @@ D:\GIT\urlShort\src\main\java\urlShort\model\UrlData.java
 D:\GIT\urlShort\src\main\java\urlShort\results\AccountResult.java
 D:\GIT\urlShort\src\main\java\urlShort\controller\RedirectController.java
 D:\GIT\urlShort\src\main\java\urlShort\utils\PasswordGenerator.java
-D:\GIT\urlShort\src\main\java\urlShort\controller\GreetingController.java
 D:\GIT\urlShort\src\main\java\urlShort\results\StaticticResult.java
 D:\GIT\urlShort\src\main\java\urlShort\service\StatisticService.java
 D:\GIT\urlShort\src\main\java\urlShort\service\UrlService.java
 D:\GIT\urlShort\src\main\java\urlShort\model\AccountData.java
-D:\GIT\urlShort\src\main\java\urlShort\model\Greeting.java
 D:\GIT\urlShort\src\main\java\urlShort\model\Account.java
 D:\GIT\urlShort\src\main\java\urlShort\Application.java
 D:\GIT\urlShort\src\main\java\urlShort\controller\StatisticController.java

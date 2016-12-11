@@ -4,11 +4,9 @@ urlShort\controller\AccountController.class
 urlShort\model\Account.class
 urlShort\results\ShortUrlResult.class
 urlShort\controller\RedirectController.class
-urlShort\model\Greeting.class
 urlShort\controller\UrlController.class
 urlShort\model\UrlData.class
 urlShort\results\AccountResult.class
-urlShort\controller\GreetingController.class
 urlShort\model\ShortUrl.class
 urlShort\service\UrlService.class
 urlShort\service\StatisticService.class
