@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5aafa42d-2d39-4a6a-8af4-60ca227254c4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/help/ToStart.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resource/sql/create-table.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resource/create-table.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resource/sql/create-table.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resource/create-tables.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resource/sql/create-table.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/resource/sql/create-table.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlShort.iml" afterPath="$PROJECT_DIR$/urlShort.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,17 +50,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-table.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resource/sql/create-table.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBInitializator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBInitializator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/urlShort/utils/DBInitializator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
@@ -75,20 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create-table.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resource/sql/create-table.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GreetingControllerTests.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GreetingControllerTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
+            <state relative-caret-position="2431">
               <caret line="171" column="24" lean-forward="false" selection-start-line="171" selection-start-column="24" selection-end-line="171" selection-end-column="24" />
               <folding />
             </state>
@@ -922,7 +897,14 @@
       <option name="project" value="LOCAL" />
       <updated>1481375413089</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="add help">
+      <created>1481455109238</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1481455109238</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -959,7 +941,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -983,9 +965,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34309623" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969153" sideWeight="0.52653927" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.52653927" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21079692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21079692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1026,7 +1008,8 @@
     <MESSAGE value="before statistic changes" />
     <MESSAGE value="after change statistic" />
     <MESSAGE value="beta 0.2 change statistic and get redirect type" />
-    <option name="LAST_COMMIT_MESSAGE" value="beta 0.2 change statistic and get redirect type" />
+    <MESSAGE value="add help" />
+    <option name="LAST_COMMIT_MESSAGE" value="add help" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1404,14 +1387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="171" column="24" lean-forward="false" selection-start-line="171" selection-start-column="24" selection-end-line="171" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resource/sql/create-table.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1432,6 +1407,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="17" column="48" lean-forward="false" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/urlShortTest/GreetingControllerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="171" column="24" lean-forward="false" selection-start-line="171" selection-start-column="24" selection-end-line="171" selection-end-column="24" />
           <folding />
         </state>
       </provider>
