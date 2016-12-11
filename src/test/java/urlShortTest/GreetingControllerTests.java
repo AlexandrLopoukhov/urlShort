@@ -104,7 +104,7 @@ public class GreetingControllerTests {
     }
 
     @Test
-    public void testUrlGenirator() {
+    public void testUrlGenerator() {
         String result = UrlGenarator.generate();
         Assert.assertNotNull(result);
     }
@@ -114,9 +114,7 @@ public class GreetingControllerTests {
         JdbcTemplate jdbcTemplate = DBInitializator.getJdbcTemplate();
         jdbcTemplate.update("INSERT INTO ACCOUNT VALUES(?, ?)", 4, "PWD");
         int accountId = 0;
-
         accountId = AccountService.getAccountByPassword("PWD");
-
         Assert.assertEquals(4, accountId);
     }
 
@@ -129,7 +127,6 @@ public class GreetingControllerTests {
         try {
             int accountId = AccountService.getAccountByPassword("PWD");
         } catch (Exception e) {
-
             exText = e.getMessage();
         }
         Assert.assertEquals("There are more than one account for token", exText);
@@ -147,9 +144,10 @@ public class GreetingControllerTests {
         String password = AccountService.getAccountPassword(1);
         this.mockMvc.perform(get("/statistic/1").header("Authorization", password))
                 .andDo(print())
-                .andExpect(status().isOk());
-
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("statisticMap").isNotEmpty());
     }
+
     @Test
     public void getStatisticWithRedirect() throws Exception {
         registerUrl(10);
@@ -158,7 +156,8 @@ public class GreetingControllerTests {
         this.mockMvc.perform(get("/r/" + shortUrl));
         this.mockMvc.perform(get("/statistic/10").header("Authorization", password))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+        .andExpect(jsonPath("statisticMap").isNotEmpty());
 
     }
     @Test

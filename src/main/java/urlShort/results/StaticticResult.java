@@ -10,14 +10,9 @@ import java.util.Map;
  */
 public class StaticticResult {
     String statisticMap;
-    String re;
 
-    public String getRe() {
-        return re;
-    }
 
     public StaticticResult(Exception e) {
-        re = e.toString();
 
     }
 
@@ -27,8 +22,6 @@ public class StaticticResult {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public String getStatisticMap() {
